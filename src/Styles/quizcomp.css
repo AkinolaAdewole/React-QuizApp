@@ -1,0 +1,13 @@
+.bg{
+    background-image: url("https://unsplash.com/photos/MAEbdaFe4ps");
+    height: 600px;
+    width: 100%;
+}
+
+.quiz1{
+    margin-top: 50px;
+    margin-left: 300px;
+    width: 400px;
+    height: 300px;
+    background-color: aqua;
+}
