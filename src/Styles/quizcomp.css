@@ -1,3 +1,6 @@
+.nav{
+    background-color: purple;
+}
 .bg{
     background-image: url("https://unsplash.com/photos/MAEbdaFe4ps");
     height: 600px;
@@ -7,7 +10,19 @@
 .quiz1{
     margin-top: 50px;
     margin-left: 300px;
-    width: 400px;
-    height: 300px;
+    width: 700px;
+    height: 350px;
     background-color: aqua;
+}
+
+.button1{
+    width: 120px;
+    background-color: aqua;
+    border-style: none;
+}
+.button2{
+    width: 120px;
+    border-style: none;
+    border-radius: 10px;
+    
 }

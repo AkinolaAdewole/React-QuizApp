@@ -1,0 +1,12 @@
+.nav{
+    background-color: purple;
+}
+.button{
+    height: 50px;
+    width: 200px;
+    background-color: blue;
+    border-radius: 10px;
+}
+.button:hover{
+    background-color: blueviolet;
+}
