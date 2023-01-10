@@ -2,6 +2,8 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import {useNavigate,} from 'react-router-dom'
+import axios from 'axios'
+
 // import { Link } from 'react-router-dom'
 import '../Styles/signup.css'
 
@@ -9,6 +11,7 @@ import '../Styles/signup.css'
 const Signup = () => {
    let Navigate = useNavigate()
    
+    const[isLoading, setIsLoading]=useState(false)
     const[email, setemail]=useState("")
     const[username, setusername]= useState("")
     const[password, setpassword]=useState("")
@@ -40,7 +43,17 @@ const Signup = () => {
           })}
     }
 
-    const signin=()=>{
+    const signin= async ()=>{
+      setIsLoading(true)
+
+      axios.get("https://jsonplaceholder.typicode.com/photos")
+			.then(res => res.json())
+			.then(res => {
+				setIsLoading(false);
+				console.log(res);
+			}).catch(err => {
+				console.log(err);
+			})
       Navigate('/signin')
     }
   return (
@@ -66,7 +79,7 @@ const Signup = () => {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                           <Link to="/signin">
-                            <h3 className="btn btn-primary signin" >Sign in</h3> 
+                            <h3 className="btn signin" >Sign in</h3> 
                           </Link>
                         </li>
                     </ul>
@@ -77,14 +90,14 @@ const Signup = () => {
             
         <div className='bg'>
                   <div className='pt-3'> 
-                    <h1>Game Who Wants to Be a Millionaire? - Free online version</h1>
+                    <h1 className='color'>Game Who Wants to Be a Millionaire? - Free online version</h1>
                   </div>
                 
                   <div className='pt-3'>
                       <div className="container-fluid">
                           <div className="row">
                             <div className="col-9 shadow-sm mx-auto">
-                              <h1 className="text-center">Sign Up Page</h1>
+                              <h1 className="text-center color">Sign Up</h1>
                                     <form>
                                       <input
                                         type="text"
@@ -110,7 +123,7 @@ const Signup = () => {
                                       
                                       
                                       <div className='d-flex pt-2 user ' > 
-                                            <div className=''>Already a user?</div>  
+                                            <div className='color'>Already a user?</div>  
                                             <div><button className='login' onClick={signin}>Sign in</button></div> 
                                       </div>
                                       

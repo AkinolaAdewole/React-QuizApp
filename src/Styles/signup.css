@@ -13,11 +13,20 @@
     /* height: 400px; */
 }
 
-@media only screen and (min-width: 745px){
- .user{
-    padding-left:400px;
-}   
+@media only screen and (min-width: 745px){ 
+    .user1{
+        display: ;
+    }  
 }
+.user{
+    padding-left:400px;
+}
+
+
+.color{
+    color: white;
+}
+
 
 .signin{
 margin-left: 800px;

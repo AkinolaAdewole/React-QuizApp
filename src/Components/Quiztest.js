@@ -11,8 +11,12 @@ const Quiztest = () => {
   //    && eachQuestion.correctAnswer)
 
   const[question,setQuestion]=useState([])
+  // const[currentQuestion,setCurrentQuestion]=(0)
   const[disQuestion, setDisQuestion]=useState([])
   const[correctAns, setCorrectAns]=useState("")
+  const [correct,setCorrect]= useState()
+  const [sampleQuiz, setSampleQuiz] = useState(0);
+  const [indexx, setIndexx] = useState()
 
 useEffect(() => {
   const quizy=JSON.parse(localStorage.wwbm)
@@ -25,30 +29,67 @@ useEffect(() => {
   let Ans=quizy[b].correctAnswer
   setCorrectAns(Ans);
   console.log(Ans)
+
+
+ 
 }, [])
 
+ const nextQuiz=()=>{ 
+    
+   let b=Math.floor(Math.random()*question.length)
+   setDisQuestion(()=>question[b])
+   let Ans=question[b].correctAnswer
+      setCorrectAns(Ans)
 
+      // let g=sampleQuiz+1
+      // if(g<question.length)
+      // {alert("end")}
+      // else{ setDisQuestion(()=>question[g])
+      //   let Ans=question[g].correctAnswer
+      //      setCorrectAns(Ans) }
+      
+
+    //   let c=disQuestion+1
+    // if(c<Math.floor(Math.random()*question.length)){
+    //   setDisQuestion(c)
+    //   let Ans=question[c].correctAnswer
+    //   setCorrectAns(Ans)
+    // } else{
+    //   alert('end of quiz')
+    // }   
+      
+}
+
+const previousQuiz=()=>{
+    // let b=sampleQuiz-1
+    // if(b>Math.floor(Math.random()*question.length)){
+    //   setDisQuestion(()=>question[b])
+    // } else{
+    //   alert("can't go back further")
+    // } 
+}
 
   // let questn=b.questn
   // let answer=b.correctAnswer
   // console.log(b)
 
 
-  const klik=(e)=>{
+  const klik=(e,index)=>{
+    setIndexx(index)
      if(e===correctAns)
-     {alert('correct')}
+     {
+      alert('correct')
+      setCorrect('true')
+    }
      else{
       alert("wrong")
+      setCorrect('false')
      }
 
   
   }
-  //    const nextQuiz=sampleQuiz+1
-  //    if(nextQuiz<quizy.length){
-  //     setSampleQuiz(nextQuiz)}
-  //     else{
-  //       alert("End of Quiz")
-  //     }
+     
+ 
 
   // const [sampleQuiz, setSampleQuiz] = useState(0);
   // const nextQuestion=()=>{
@@ -72,24 +113,43 @@ useEffect(() => {
                     </svg>
                 </div>
               </Link>
+
+
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                 <span className="navbar-toggler-icon"></span>
+                </button>
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                
+              </div>
           </nav>
 
+       <div className='qzb'>
 
-    <div>Akinola</div>
-    <div>{disQuestion.questn}</div>
-    <div className='button' onClick={(e)=>klik(e.target.innerHTML)}>{disQuestion.optionA}</div>
-    <div className='button mt-3' onClick={(e)=>klik(e.target.innerHTML)}>{disQuestion.optionB}</div>
-    <div className='button mt-3' onClick={(e)=>klik(e.target.innerHTML)}>{disQuestion.optionC}</div>
-    <div className='button mt-3' onClick={(e)=>klik(e.target.innerHTML)}>{disQuestion.optionD}</div>
-      {/* <div>{disQuestion.questn}</div> */}
-      {/* <div>{quizy.map((options,index)=>
+
+                <div>Akinola</div>
+                <div className='qz'>
+                <h4>{disQuestion.questn}</h4>
+                <div className='button' onClick={(e)=>klik(e.target.innerHTML)}> <div className='pt-2'>{disQuestion.optionA}</div></div>
+                <div className='button mt-3' onClick={(e)=>klik(e.target.innerHTML)}><div className='pt-2'>{disQuestion.optionB}</div></div>
+                <div className='button mt-3' onClick={(e)=>klik(e.target.innerHTML)}><div className='pt-2'>{disQuestion.optionC}</div></div>
+                <div className='button mt-3' onClick={(e)=>klik(e.target.innerHTML)}><div className='pt-2'>{disQuestion.optionD}</div></div>
+                  
+     
+      {/* <div>{disQuestion[sampleQuiz].questn}</div>
+      console.log(sampleQuiz);
+      <div>{disQuestion[sampleQuiz].map((option,index)=>
        <div key={index}>
-        <div>{options.questn}</div>
-        <button onClick={()=>klik(options,answer)}>{options.optionA}</button>
-         <button onClick={()=>klik(options,answer)}>{options.optionB}</button>
-        <button onClick={()=>klik(options,answer)}>{options.optionC}</button>
-        <button onClick={()=>klik(options,answer)}>{options.optionD}</button>
+        <button onClick={(e)=>klik(e.target.innerHTML)}>{option[sampleQuiz].optionA}</button>
+         <button onClick={(e)=>klik(e.target.innerHTML)}>{option[sampleQuiz].optionB}</button>
+        <button onClick={(e)=>klik(e.target.innerHTML)}>{option[sampleQuiz].optionC}</button>
+        <button onClick={(e)=>klik(e.target.innerHTML)}>{option[sampleQuiz].optionD}</button>
        </div> )}</div> */}
+
+                  <div className='btn btn-success' onClick={previousQuiz}>Previous</div>
+                  <div className='btn btn-success' onClick={nextQuiz}>Next</div>
+           </div>
+      
+      </div>
     </>
   )
 }
