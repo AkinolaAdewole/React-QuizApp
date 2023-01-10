@@ -47,7 +47,6 @@ const Signup = () => {
       setIsLoading(true)
 
       axios.get("https://jsonplaceholder.typicode.com/photos")
-			.then(res => res.json())
 			.then(res => {
 				setIsLoading(false);
 				console.log(res);
