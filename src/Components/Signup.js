@@ -11,7 +11,7 @@ import '../Styles/signup.css'
 const Signup = () => {
    let Navigate = useNavigate()
    
-    const[isLoading, setIsLoading]=useState(false)
+    const[isLoading, setIsLoading]=useState(true)
     const[email, setemail]=useState("")
     const[username, setusername]= useState("")
     const[password, setpassword]=useState("")
@@ -19,6 +19,7 @@ const Signup = () => {
 
     useEffect(()=>{
       if(localStorage.steph){
+        setIsLoading(false)
         let d = JSON.parse(localStorage.steph)
         setAllUsers(d)
       } else{
@@ -57,7 +58,7 @@ const Signup = () => {
     }
   return (
     <>
-
+        {isLoading && <div>loading</div>}
             <nav className="navbar navbar-expand-lg  nav">
               
               <Link to="/">
