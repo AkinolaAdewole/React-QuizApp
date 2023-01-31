@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../Styles/quizcomp.css"
+import "../Styles/quizcomp.css";
+import "../Styles/btn.css";
 
 const Quizcomp = () => {
   const quizz = [
@@ -43,35 +44,50 @@ const Quizcomp = () => {
 
   // console.log(quizz.choices)
   // const [currentScore, setCurrentScore] = useState(0);
+
   const [sampleQuiz, setSampleQuiz] = useState(0);
-  const [score, setScore]=useState(0)
+  const [wrong, setWrong]=useState(0)
+  const [correct, setCorrect]=useState(0)
+  const [showScore, setShowscore]=useState(false)
+  const [title, settitle] = useState('Next')
+  const [style, setstyle] = useState('btn1')
 
   const nextQuestion=()=>{
-
+      // const allStyles = {
+      //   btn:{
+      //     backgroundColor: green,
+      //     color:white
+      //   },
+      // }
     const nextQuiz=sampleQuiz+1
     if(nextQuiz<quizz.length){
       setSampleQuiz(nextQuiz)
     } else{
+      // setSampleQuiz(quizz.length)
       alert('end of quiz')
-    }
+      setstyle('btn2')
+      settitle('Finish Exam')
+    alert('end of quiz');
+    } 
     
   }
 
   const buttonClick=(options, answer)=>{
 
      if(options.choice === answer ){
-      setScore(()=>(score+1))
+      setCorrect(correct+1)
 
       
      // alert('The Answer Is Correct')
      
      }else{
-      setScore(()=>(score+0))
-     alert('The Answer Is Wrong')
+      setWrong(wrong + 1/3)
+    //  alert('The Answer Is Wrong')
       
       
      }
-     console.log(score)
+    // alert(correct)
+    // alert(wrong)
 
     // const nextQuiz=sampleQuiz+1
     // if(nextQuiz<quizz.length){
@@ -131,7 +147,7 @@ const Quizcomp = () => {
                   
                           <div className="pt-4 d-flex">
                             <div><button className="button2" onClick={previousQuestion}>Previous</button> </div>
-                            <div><button onClick={nextQuestion}> Next </button>   </div>
+                            <div><button className={style} onClick={nextQuestion}>{title} </button>   </div>
                           </div>
                   </div>
                     
@@ -152,6 +168,9 @@ const Quizcomp = () => {
                   
                 </div>
         </div>
+
+        <div className="text">{correct}</div>
+        <div className="text">{wrong}</div>
     </>
   );
 };

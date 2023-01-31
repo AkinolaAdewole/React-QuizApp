@@ -22,14 +22,15 @@ const Signup = () => {
     useEffect(()=>{
       setTimeout(() => {
         setIsPending(false)
+        if(localStorage.steph){
+          // setIsPending(false)
+          let d = JSON.parse(localStorage.steph)
+          setAllUsers(d)
+        } else{
+          setAllUsers([])
+        }
       }, 3000);
-      // if(localStorage.steph){
-      //   setIsPending(false)
-      //   let d = JSON.parse(localStorage.steph)
-      //   setAllUsers(d)
-      // } else{
-      //   setAllUsers([])
-      // }
+      
     },[])
 
    
