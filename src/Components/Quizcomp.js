@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../Styles/quizcomp.css";
 import "../Styles/btn.css";
 
-const Quizcomp = () => {
+const Quizcomp = ({setAnswers}) => {
   const quizz = [
     {
       question: "What is the capital of Nigeria?",
@@ -51,6 +51,7 @@ const Quizcomp = () => {
   const [showScore, setShowscore]=useState(false)
   const [title, settitle] = useState('Next')
   const [style, setstyle] = useState('btn1')
+  setAnswers({correct,wrong});
 
   const nextQuestion=()=>{
       // const allStyles = {
