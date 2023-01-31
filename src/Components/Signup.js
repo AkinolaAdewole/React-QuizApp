@@ -11,20 +11,25 @@ import '../Styles/signup.css'
 const Signup = () => {
    let Navigate = useNavigate()
    
-    const[isLoading, setIsLoading]=useState(true)
     const[email, setemail]=useState("")
     const[username, setusername]= useState("")
     const[password, setpassword]=useState("")
     const[allUsers, setAllUsers]=useState([])
 
+    const[isLoading, setIsLoading]=useState(false)
+    const[isPending, setIsPending]=useState(true)
+
     useEffect(()=>{
-      if(localStorage.steph){
-        setIsLoading(false)
-        let d = JSON.parse(localStorage.steph)
-        setAllUsers(d)
-      } else{
-        setAllUsers([])
-      }
+      setTimeout(() => {
+        setIsPending(false)
+      }, 3000);
+      // if(localStorage.steph){
+      //   setIsPending(false)
+      //   let d = JSON.parse(localStorage.steph)
+      //   setAllUsers(d)
+      // } else{
+      //   setAllUsers([])
+      // }
     },[])
 
    
@@ -44,22 +49,49 @@ const Signup = () => {
           })}
     }
 
-    const signin= async ()=>{
-      setIsLoading(true)
+    const loadpage=()=>{
+      // if(!isLoading){
+      //   setTimeout(() => {
+      //     return (<div>Loading</div>)
+      //   }, 5000);
+      // }
 
+      setIsLoading(true)
+      if(isLoading==="false"){
+        alert('false')
+      }else{
+        // alert('true')
+        setTimeout(() => {
+          
+        }, 5000);
+      }
+    }
+
+    const signin= async ()=>{
+      setIsLoading(true);
       axios.get("https://jsonplaceholder.typicode.com/photos")
 			.then(res => {
-				setIsLoading(false);
-				console.log(res);
-			}).catch(err => {
-				console.log(err);
+				// console.log(res);
+        setIsLoading(false)
+			}).catch((error) => {
+				console.log('error', error);
 			})
       Navigate('/signin')
     }
   return (
     <>
-        {isLoading && <div>loading</div>}
+      {
+        isPending && <div>Loading</div>
+      }
             <nav className="navbar navbar-expand-lg  nav">
+           
+            {/* <div>
+      {isLoading ?  (
+        "Loading..."
+      ) : (
+        "Not loading"
+      )}
+      </div> */}
               
               <Link to="/">
               <div className='icon1'>
@@ -78,9 +110,13 @@ const Signup = () => {
                <div  className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                          <Link to="/signin">
-                            <h3 className="btn signin" >Sign in</h3> 
+                         
+                         <Link  to="/signin" >
+                             
+                               <h3 className="btn signin" onClick={loadpage}>Sign in</h3> 
+                            
                           </Link>
+          
                         </li>
                     </ul>
                </div>
