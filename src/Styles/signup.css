@@ -13,9 +13,11 @@
     /* height: 400px; */
 }
 
-@media only screen and (min-width: 745px){ 
-    .user1{
-        display: ;
+@media only screen and (max-width: 745px){ 
+    .user{
+        display:flex ;
+        flex-direction: column;
+        padding-left: 400px;
     }  
 }
 .user{

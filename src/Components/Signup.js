@@ -159,7 +159,7 @@ const Signup = () => {
                                       <button type="button" className="btn btn-primary" onClick={submit}>Sign up</button>
                                       
                                       
-                                      <div className='d-flex pt-2 user ' > 
+                                      <div className='d-flex user ' > 
                                             <div className='color'>Already a user?</div>  
                                             <div><button className='login' onClick={signin}>Sign in</button></div> 
                                       </div>
