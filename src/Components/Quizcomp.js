@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import "../Styles/quizcomp.css";
 import "../Styles/btn.css";
 
-const Quizcomp = ({setAnswers}) => {
+
+const Quizcomp = () => {
   const quizz = [
     {
       question: "What is the capital of Nigeria?",
@@ -51,9 +52,10 @@ const Quizcomp = ({setAnswers}) => {
   const [showScore, setShowscore]=useState(false)
   const [title, settitle] = useState('Next')
   const [style, setstyle] = useState('btn1')
-  setAnswers({correct,wrong});
+  // setAnswers({correct,wrong});
 
   const nextQuestion=()=>{
+    setCorrect(correct+1)
       // const allStyles = {
       //   btn:{
       //     backgroundColor: green,
@@ -65,7 +67,7 @@ const Quizcomp = ({setAnswers}) => {
       setSampleQuiz(nextQuiz)
     } else{
       // setSampleQuiz(quizz.length)
-      alert('end of quiz')
+      // alert('end of quiz')
       setstyle('btn2')
       settitle('Finish Exam')
     alert('end of quiz');
@@ -79,11 +81,11 @@ const Quizcomp = ({setAnswers}) => {
       setCorrect(correct+1)
 
       
-     // alert('The Answer Is Correct')
+     alert('The Answer Is Correct')
      
      }else{
-      setWrong(wrong + 1/3)
-    //  alert('The Answer Is Wrong')
+      // setWrong(wrong + 1/3)
+     alert('The Answer Is Wrong')
       
       
      }
@@ -170,8 +172,8 @@ const Quizcomp = ({setAnswers}) => {
                 </div>
         </div>
 
-        <div className="text">{correct}</div>
-        <div className="text">{wrong}</div>
+        {/* <div className="text">{correct}</div>
+        <div className="text">{wrong}</div> */}
     </>
   );
 };

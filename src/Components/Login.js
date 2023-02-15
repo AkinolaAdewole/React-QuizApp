@@ -1,19 +1,32 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const [username, setuserName] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading]= useState(false);
+  const [player, setPlayer]=useState([])
 
-  const userN = useRef();
-  const passW = useRef();
+  const userN = useRef(null);
 
   const Navigate = useNavigate();
+
+  useEffect(() => {
+    if(localStorage.steph){
+      setIsLoading(true)
+      let d = JSON.parse(localStorage.steph)
+          setPlayer(d)
+        } else{
+          setPlayer([])
+    }
+  }, [])
+  
 
   const userDetails = JSON.parse(localStorage.steph);
 
   const signin = () => {
+    // e.prevent.Default()
     let b = userDetails.find(
       (eachUser) =>
         eachUser.username === username &&
@@ -22,8 +35,8 @@ const Login = () => {
     );
 
     if (typeof b === "undefined") {
-      // userN.innerHTML="username is not correct"
-      alert("user data is incorrect");
+      userN.current.innerHTML="username is not correct"
+      // alert("user data is incorrect");
     }
     // else if(typeof b ==='undefined'){
     //
@@ -72,6 +85,7 @@ const Login = () => {
         </div>
       </nav>
 
+      <div ref={userN}></div>
       <div className="container-fluid">
         <div className="row">
           <div className="col-9 shadow-sm mx-auto">
@@ -83,7 +97,7 @@ const Login = () => {
                 className="form-control my-2"
                 onChange={(e) => setuserName(e.target.value)}
               />
-              <div ref={userN}></div>
+             
 
               <input
                 type="password"
@@ -91,7 +105,7 @@ const Login = () => {
                 className="form-control my-2"
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <div ref={passW}></div>
+              
               <button className="btn btn-primary" onClick={signin}>
                 sign in
               </button>
