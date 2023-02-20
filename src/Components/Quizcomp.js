@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Styles/quizcomp.css";
 import "../Styles/btn.css";
 
@@ -45,23 +45,19 @@ const Quizcomp = () => {
 
   // console.log(quizz.choices)
   // const [currentScore, setCurrentScore] = useState(0);
-
+ const Navigate=useNavigate()
   const [sampleQuiz, setSampleQuiz] = useState(0);
   const [wrong, setWrong]=useState(0)
   const [correct, setCorrect]=useState(0)
   const [showScore, setShowscore]=useState(false)
   const [title, settitle] = useState('Next')
+  const [finishTest, setFinishTest]=useState('Finish Exam')
   const [style, setstyle] = useState('btn1')
   // setAnswers({correct,wrong});
 
   const nextQuestion=()=>{
     setCorrect(correct+1)
-      // const allStyles = {
-      //   btn:{
-      //     backgroundColor: green,
-      //     color:white
-      //   },
-      // }
+    setWrong(wrong+1)
     const nextQuiz=sampleQuiz+1
     if(nextQuiz<quizz.length){
       setSampleQuiz(nextQuiz)
@@ -69,12 +65,13 @@ const Quizcomp = () => {
       // setSampleQuiz(quizz.length)
       // alert('end of quiz')
       setstyle('btn2')
-      settitle('Finish Exam')
+      settitle(finishTest)
     alert('end of quiz');
     } 
     
   }
-
+console.log(quizz.length);
+console.log(sampleQuiz);
   const buttonClick=(options, answer)=>{
 
      if(options.choice === answer ){
@@ -84,7 +81,7 @@ const Quizcomp = () => {
      alert('The Answer Is Correct')
      
      }else{
-      // setWrong(wrong + 1/3)
+      setWrong(wrong + 1)
      alert('The Answer Is Wrong')
       
       
@@ -104,6 +101,10 @@ const Quizcomp = () => {
 
     const previousQuiz=sampleQuiz-1
     setSampleQuiz(previousQuiz)
+  }
+
+  const finish=()=>{
+    Navigate('/result')
   }
 
   const hp=(e)=>{
@@ -147,10 +148,15 @@ const Quizcomp = () => {
                           <div>{quizz[sampleQuiz].choices.map((options, index)=>
                           <div key={index} className="pt-3 ps-5 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
                           )}</div>
-                  
-                          <div className="pt-4 d-flex">
-                            <div><button className="button2" onClick={previousQuestion}>Previous</button> </div>
-                            <div><button className={style} onClick={nextQuestion}>{title} </button>   </div>
+                  <div>
+                            {sampleQuiz === quizz.length-1?
+                            <Link to="/result">
+                                <button className={style}>Finish Test </button>
+                            </Link>:
+                            <button className={style} onClick={nextQuestion}>Next </button>}
+                            {/* <div><button className="button2" onClick={previousQuestion}>Previous</button> </div>
+                            <div><button className="d-none" onClick={finish}>{finishTest}</button> </div>
+                            <div><button className={style} onClick={nextQuestion}>{title} </button>   </div> */}
                           </div>
                   </div>
                     

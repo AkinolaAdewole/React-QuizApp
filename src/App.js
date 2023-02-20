@@ -9,6 +9,7 @@ import Dashboard from './Components/Dashboard';
 import Quiztest from './Components/Quiztest';
 import About from './Components/About';
 import Error404 from './Components/Error404';
+import Result from './Components/Result';
 
 function App() {
   const [Answers, setAnswers] = useState()
@@ -23,6 +24,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/quiztest' element={<Quiztest/>}/>
         <Route path='/aboutus'  element={<About/>}/>
+        <Route path='/result' element={<Result/>}/>
         <Route path='*' element={<Error404/>}/>
       </Routes>
       {/* <Fetch/> */}
