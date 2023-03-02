@@ -56,8 +56,6 @@ const Quizcomp = () => {
   // setAnswers({correct,wrong});
 
   const nextQuestion=()=>{
-    setCorrect(correct+1)
-    setWrong(wrong+1)
     const nextQuiz=sampleQuiz+1
     if(nextQuiz<quizz.length){
       setSampleQuiz(nextQuiz)
@@ -72,6 +70,7 @@ const Quizcomp = () => {
   }
 console.log(quizz.length);
 console.log(sampleQuiz);
+
   const buttonClick=(options, answer)=>{
 
      if(options.choice === answer ){
@@ -83,7 +82,6 @@ console.log(sampleQuiz);
      }else{
       setWrong(wrong + 1)
      alert('The Answer Is Wrong')
-      
       
      }
     // alert(correct)
@@ -143,22 +141,32 @@ console.log(sampleQuiz);
                     <div><h1> Game Who Wants to Be a Millionaire? - Free online version</h1></div>
                 
                 {/* {console.log('*: ',quizz)} */}
-                <div className="quiz1"  onLoad={(e)=>hp(e)}>
-                          <div className="pt-4"><h3>{quizz[sampleQuiz].question}</h3></div>
-                          <div>{quizz[sampleQuiz].choices.map((options, index)=>
-                          <div key={index} className="pt-3 ps-5 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
-                          )}</div>
-                  <div>
-                            {sampleQuiz === quizz.length-1?
-                            <Link to="/result">
-                                <button className={style}>Finish Test </button>
-                            </Link>:
-                            <button className={style} onClick={nextQuestion}>Next </button>}
-                            {/* <div><button className="button2" onClick={previousQuestion}>Previous</button> </div>
-                            <div><button className="d-none" onClick={finish}>{finishTest}</button> </div>
-                            <div><button className={style} onClick={nextQuestion}>{title} </button>   </div> */}
-                          </div>
-                  </div>
+
+
+
+                 {/* <div>
+                  {showScore ? (
+                    <div>
+                      You score {score} out of {quizz.length}
+                    </div>
+                  ):()}
+                 </div> */}
+                 
+                    <div className="quiz1"  onLoad={(e)=>hp(e)}>
+                              <div className="pt-4"><h3>{quizz[sampleQuiz].question}</h3></div>
+                              <div>{quizz[sampleQuiz].choices.map((options, index)=>
+                              <div key={index} className="pt-3 ps-5 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
+                              )}</div>
+                      <div>
+                                {sampleQuiz === quizz.length-1?
+                                <Link to="/result">
+                                    <button onClick={finish} className={style}>Finish Test </button>
+                                </Link>:
+                                <button className={style} onClick={nextQuestion}>Next </button>}
+                                <div><button className="button2" onClick={previousQuestion}>Previous</button> </div>
+                             
+                              </div>
+                      </div>
                     
                       
                       {/* {console.log(sampleQuiz)} */}

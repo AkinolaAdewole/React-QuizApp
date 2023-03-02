@@ -6,13 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../node_modules/font-awesome/css/font-awesome.css'
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+        <BrowserRouter>
+        <App />
+        </BrowserRouter>
   </React.StrictMode>
 );
 // If you want to start measuring performance in your app, pass a function
