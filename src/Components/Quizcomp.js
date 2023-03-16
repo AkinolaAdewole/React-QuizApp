@@ -77,11 +77,11 @@ console.log(sampleQuiz);
       setCorrect(correct+1)
 
       
-     alert('The Answer Is Correct')
+    //  alert('The Answer Is Correct')
      
      }else{
       setWrong(wrong + 1)
-     alert('The Answer Is Wrong')
+    //  alert('The Answer Is Wrong')
       
      }
     // alert(correct)
@@ -111,7 +111,7 @@ console.log(sampleQuiz);
 
   return (
     <>
-    <div >
+        <div >
             <nav className="navbar navbar-expand-lg  nav">
                 <Link to="/">
                   <div className='icon1'>
@@ -144,16 +144,18 @@ console.log(sampleQuiz);
 
 
 
-                 {/* <div>
-                  {showScore ? (
-                    <div>
-                      You score {score} out of {quizz.length}
-                    </div>
-                  ):()}
-                 </div> */}
+                 
                  
                     <div className="quiz1"  onLoad={(e)=>hp(e)}>
-                              <div className="pt-4"><h3>{quizz[sampleQuiz].question}</h3></div>
+
+                    <div>
+                  {showScore ? (
+                    <div>
+                      You score {correct} out of {quizz.length}
+                    </div>
+                  ):(
+                    <>
+                    <div className="pt-4"><h3>{quizz[sampleQuiz].question}</h3></div>
                               <div>{quizz[sampleQuiz].choices.map((options, index)=>
                               <div key={index} className="pt-3 ps-5 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
                               )}</div>
@@ -166,7 +168,11 @@ console.log(sampleQuiz);
                                 <div><button className="button2" onClick={previousQuestion}>Previous</button> </div>
                              
                               </div>
-                      </div>
+                      
+                    </>
+                  )}
+                 </div>
+                              
                     
                       
                       {/* {console.log(sampleQuiz)} */}
@@ -181,9 +187,10 @@ console.log(sampleQuiz);
                           </div>
                         ))}
                       </div> */}
-                    
                   
                 </div>
+        </div>
+
         </div>
 
         {/* <div className="text">{correct}</div>
