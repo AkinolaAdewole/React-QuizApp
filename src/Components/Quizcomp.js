@@ -52,6 +52,11 @@ const Quizcomp = () => {
       answer: "Aid"
     },
     {
+      question:"Who won the 2021 Nobel Prize in Literature?",
+      choices:[{choice:" Olga Tokarczuk"}, {choice:"Louise Glück"}, {choice:"Kazuo Ishiguro"}, {choice:"Mario Vargas Llosa"}],
+      answer:" Olga Tokarczuk"
+    },
+    {
       question:"What is the name of the new variant of COVID-19 that was first identified in South Africa?",
       choices:[{choice:"Alpha"},{choice:"Delta"}, {choice:"Beta"}, {choice:"Gamma"}],
       answer:"Beta"
@@ -203,9 +208,10 @@ console.log(sampleQuiz);
                     <>
                     <div className="pt-4"><h3>{quizz[sampleQuiz].question}</h3></div>
                               <div>{quizz[sampleQuiz].choices.map((options, index)=>
-                              <div key={index} className="pt-3 ps-5 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
+                              <div key={index} className="pt-3 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
                               )}</div>
-                      <div>
+                      
+                      <div className="pt-5 d-flex">
                                 {sampleQuiz === quizz.length-1?
                                 <Link to="/result">
                                     <button onClick={finish} className={style}>Finish Test </button>

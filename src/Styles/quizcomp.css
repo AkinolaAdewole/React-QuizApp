@@ -3,15 +3,15 @@
 }
 .bg{
     background-image: url("../Pics/wwbm1.jpg");
-    height: 590px;
+    height: 570px;
     width: 100%;
 }
 
 .quiz1{
-    margin-top: 50px;
-    margin-left: 250px;
-    width: 850px;
-    height: 450px;
+    margin-top: 10px;
+    margin-left: 110px;
+    width: 1150px;
+    height: 470px;
     background-color: aqua;
 }
 
@@ -24,5 +24,4 @@
     width: 120px;
     border-style: none;
     border-radius: 10px;
-    
 }
