@@ -41,6 +41,11 @@ const Quizcomp = () => {
       choices: [{choice:"Big head"}, {choice:"Principal"}, {choice:"Headmaster"}, {choice:"Class teacher"}],
       answer: "Headmaster"
     },
+    {
+      question:"What artist has the most streams on Spotify?",
+      choices:[{choice:"Rihanna"}, {choice:"Eminem"},{choice:"Drake"},{choice:"Beyonce"}],
+      answer:"Drake"
+    }
   ];
 
   // console.log(quizz.choices)
