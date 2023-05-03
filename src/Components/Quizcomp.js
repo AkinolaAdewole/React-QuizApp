@@ -17,6 +17,11 @@ const Quizcomp = () => {
             answer: "Abuja"
     },
     {
+      question:"Which country recently signed a historic peace agreement with Israel known as the Abraham Accords?",
+      choices:[{choice:"Saudi Arabia"},{choice:"United Arab Emirates"}, {choice:" Turkey"}, {choice:"Syria"}],
+      answer:"United Arab Emirates"
+    },
+    {
       question: "How many consonants are there alphabets?",
       choices: [ {choice:"20"}, {choice:"22"}, {choice:"21"}, {choice:"19"}],
       answer: "21"
@@ -41,12 +46,15 @@ const Quizcomp = () => {
       choices:[{choice:" South Korea"}, {choice:"Singapore"}, {choice:"Japan"}, {choice:"China"}],
       answer:"Japan"
     },
-
-
     {
       question: "Which word is similar to HELP?",
       choices: [ {choice:"Generous"}, {choice:"Give"}, {choice:"Aid"}, {choice:"Take"}],
       answer: "Aid"
+    },
+    {
+      question:"What is the name of the new variant of COVID-19 that was first identified in South Africa?",
+      choices:[{choice:"Alpha"},{choice:"Delta"}, {choice:"Beta"}, {choice:"Gamma"}],
+      answer:"Beta"
     },
     {
       question: "A period of ten years is called _____?",
@@ -54,9 +62,24 @@ const Quizcomp = () => {
       answer: "Decade"
     },
     {
+      question:"Who recently won the Nobel Peace Prize for their efforts to combat sexual violence in conflict?",
+      choices:[{choice:"Greta Thunberg"}, {choice:"Nadia Murad"}, {choice:" Malala Yousafzai"}, {choice:"Denis Mukwege"}],
+      answer:"Nadia Murad"
+    },
+    {
       question: "The opposite INFERIOR is _____?",
       choices: [{choice:"Alpha"}, {choice:"Senior"}, {choice:"Superior"}, {choice:"Boss"}],
       answer: "Superior"
+    },
+    {
+      question:"Which country has recently become the first in the world to legalize Bitcoin as a legal tender?",
+      choices:[{choice:"Venezuela"}, {choice:"El Salvador"},{choice:"Colombia"}, {choice:"Brazil"}],
+      answer:"El Salvador"
+    },
+
+    {
+      question:"Who won the Men's Singles title at the US Open Tennis Championship 2021?",
+      choices:[{choice:"Rafael Nadal"},{choice:"Daniil Medvedev"}, {choice:"Novak Djokovic"}, {choice:"Roger Federer"}]
     },
     {
       question: "The head of primary school is called ____?",
@@ -165,7 +188,7 @@ console.log(sampleQuiz);
 
 
                 <div className="bg">
-                    <div><h1> Game Who Wants to Be a Millionaire? - Free online version</h1></div>
+                    <div><h1 className="text-light"> Game Who Wants to Be a Millionaire? - Free online version</h1></div>
                 
                 {/* {console.log('*: ',quizz)} */}
 
