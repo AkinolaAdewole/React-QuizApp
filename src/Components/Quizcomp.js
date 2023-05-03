@@ -22,6 +22,28 @@ const Quizcomp = () => {
       answer: "21"
     },
     {
+      question:"What company was originally called CADABRA?",
+      choices:[{choice:"Blue Origin"}, {choice:"Ali Express"}, {choice:"Amazon"}, {choice:"Best Buy"}],
+      answer:"Amazon"
+    },
+    {
+      question:"Who was the last Tsar of Russia?",
+      choices:[{choice:"Nicholas II"}, {choice:"Alexander III"}, {choice:"Peter I"}, {choice:"Feodor III"}],
+      answer:"Nicholas II"
+    },
+    {
+      question:"Who discovered that the earth revolves around the sun?",
+      choices:[{choice:"Neil Armstrong"}, {choice:"Nicolaus Copernicus"},{choice:"Edwin Aldrin"}, {choice:"Alan Shepard"}],
+      answer:"Nicolaus Copernicus"
+    },
+    {
+      question:"Which country hosted the 2020 Summer Olympics?",
+      choices:[{choice:" South Korea"}, {choice:"Singapore"}, {choice:"Japan"}, {choice:"China"}],
+      answer:"Japan"
+    },
+
+
+    {
       question: "Which word is similar to HELP?",
       choices: [ {choice:"Generous"}, {choice:"Give"}, {choice:"Aid"}, {choice:"Take"}],
       answer: "Aid"
@@ -43,9 +65,9 @@ const Quizcomp = () => {
     },
     {
       question:"What artist has the most streams on Spotify?",
-      choices:[{choice:"Rihanna"}, {choice:"Eminem"},{choice:"Drake"},{choice:"Beyonce"}],
+      choices:[{choice:"Rihanna"}, {choice:"Eminem"}, {choice:"Drake"}, {choice:"Beyonce"}],
       answer:"Drake"
-    }
+    },
   ];
 
   // console.log(quizz.choices)
@@ -82,7 +104,7 @@ console.log(sampleQuiz);
       setCorrect(correct+1)
 
       
-    //  alert('The Answer Is Correct')
+     alert('The Answer Is Correct')
      
      }else{
       setWrong(wrong + 1)
@@ -154,11 +176,7 @@ console.log(sampleQuiz);
                     <div className="quiz1"  onLoad={(e)=>hp(e)}>
 
                     <div>
-                  {showScore ? (
-                    <div>
-                      You score {correct} out of {quizz.length}
-                    </div>
-                  ):(
+                  {
                     <>
                     <div className="pt-4"><h3>{quizz[sampleQuiz].question}</h3></div>
                               <div>{quizz[sampleQuiz].choices.map((options, index)=>
@@ -175,7 +193,7 @@ console.log(sampleQuiz);
                               </div>
                       
                     </>
-                  )}
+                  }
                  </div>
                               
                     
