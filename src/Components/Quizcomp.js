@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { correctFunct } from '../reduxSlice/Correctredux';
+import { wrongFunct } from '../reduxSlice/Wrongredux';
+import { useDispatch } from 'react-redux';
 import "../Styles/quizcomp.css";
 import "../Styles/btn.css";
 
