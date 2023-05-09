@@ -1,4 +1,6 @@
 const quizz = [
+
+    
     {
       question: "What is the capital of Nigeria?",
       choices: [ 
@@ -8,6 +10,11 @@ const quizz = [
               {choice:"Akure"}
             ],
             answer: "Abuja"
+    },
+
+    {
+        question:"What is the fastest land animal in the world?",
+        choices:[{choice:"Lion"},{choice:"Cheetah"},{choice:"Tiger"},{choice:"leopard"}]
     },
     {
       question:"Which country recently signed a historic peace agreement with Israel known as the Abraham Accords?",
@@ -70,9 +77,19 @@ const quizz = [
       answer: "Superior"
     },
     {
+        question:"What is the name for a group of lions?",
+        choices:[{choice:"pack"},{choice:"Pride"},{choice:"Flock"},{choice:"Herd"}],
+        answer:"Pride"
+    },
+    {
       question:"Which country has recently become the first in the world to legalize Bitcoin as a legal tender?",
       choices:[{choice:"Venezuela"}, {choice:"El Salvador"},{choice:"Colombia"}, {choice:"Brazil"}],
       answer:"El Salvador"
+    },
+    {
+        question:"What type of animal is a kangaroo?",
+        choices:[{choice:"Primate"},{choice:"Reptile"},{choice:"Marsupial"},{choice:"Rodent"}],
+        answer:"Marsupial"
     },
 
     {
