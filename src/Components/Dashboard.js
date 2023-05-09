@@ -23,6 +23,13 @@ const Dashboard = () => {
  let email= userDetails.email
  console.log(email)
 
+
+
+ const takeQuiz=()=>{
+  Navigate('/quiz')
+}
+
+
   const saveQuestion=()=>{
     if(questn!=="" && optionA!=="" && optionB!=="" && optionC!=="" && optionD!=="" && correctAnswer!==""){
       let questioneer = {questn,optionA, optionB, optionC, optionD, correctAnswer}
@@ -35,10 +42,7 @@ const Dashboard = () => {
   }
 
 
-  const takeQuiz=()=>{
-    Navigate('/quiz')
-  }
-
+  
   const signout=()=>{
     localStorage.removeItem('steve')
     Navigate('/signin')
@@ -82,11 +86,13 @@ const Dashboard = () => {
 
                
               <div className='row'>
-                <div type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+
+              <div type="button" className="btn btn-primary" onClick={takeQuiz} >Take Quiz</div>
+                <div type="button" className="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                   Set Questions
                 </div>
 
-                <div type="button" className="btn btn-primary mt-2" onClick={takeQuiz} >Take Quiz</div>
+               
                 <div type="button" className="btn btn-primary mt-2">Result</div>
               </div>
 
