@@ -22,12 +22,14 @@ const Quizcomp = () => {
   const [title, settitle] = useState('Next')
   const [finishTest, setFinishTest]=useState('Finish Exam')
   const [style, setstyle] = useState('btn1')
+  const [selectedOption, setSelectedOption] = useState('');
   // setAnswers({correct,wrong});
 
   const nextQuestion=()=>{
     const nextQuiz=sampleQuiz+1
     if(nextQuiz<quizz.length){
       setSampleQuiz(nextQuiz)
+
     } else{
       // setSampleQuiz(quizz.length)
       // alert('end of quiz')
@@ -41,7 +43,7 @@ console.log(quizz.length);
 console.log(sampleQuiz);
 
   const buttonClick=(options, answer)=>{
-
+    setSelectedOption(options);
      if(options.choice === answer ){
       setCorrect(correct+1)
       dispatch(correctFunct(1))
@@ -124,17 +126,21 @@ console.log(sampleQuiz);
                     <>
                     <div className="pt-4"><h5>{quizz[sampleQuiz].question}</h5></div>
                               <div>{quizz[sampleQuiz].choices.map((options, index)=>
-                                  <div key={index} className="pt-3 d-flex">
+                                  <div key={index} className="pt-3 ps-3 d-flex">
                                           <input
                                             type="radio"
                                             name="quizOption"
-                                            onClick={() => buttonClick(options, quizz[sampleQuiz].answer)}
+                                            checked={selectedOption === options}
+                                            onChange={() => buttonClick(options, quizz[sampleQuiz].answer)}
                                           />
                                   {options.choice}
                                 </div>
                             
                               // <div key={index} className="pt-3 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
-                              )}</div>
+                              )}
+                               {/* <p>Selected Option: {selectedOption}</p> */}
+                              
+                              </div>
                       
                       <div className="pt-5 d-flex">
                       <div><button className="button2" onClick={previousQuestion}>Previous</button> </div>
