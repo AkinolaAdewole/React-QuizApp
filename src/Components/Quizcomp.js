@@ -122,9 +122,18 @@ console.log(sampleQuiz);
                     <div>
                   {
                     <>
-                    <div className="pt-4"><h3>{quizz[sampleQuiz].question}</h3></div>
+                    <div className="pt-4"><h5>{quizz[sampleQuiz].question}</h5></div>
                               <div>{quizz[sampleQuiz].choices.map((options, index)=>
-                              <div key={index} className="pt-3 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
+                                  <div key={index} className="pt-3 d-flex">
+                                          <input
+                                            type="radio"
+                                            name="quizOption"
+                                            onClick={() => buttonClick(options, quizz[sampleQuiz].answer)}
+                                          />
+                                  {options.choice}
+                                </div>
+                            
+                              // <div key={index} className="pt-3 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
                               )}</div>
                       
                       <div className="pt-5 d-flex">

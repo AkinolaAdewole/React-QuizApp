@@ -15,7 +15,11 @@ const Result = () => {
   const wrong=useSelector(state=>state.wrongScore)
   return (
     <>
-        {state1.score}/{quizz.length}
+
+    <div>Congratulations! {username}</div>
+    <div>You have completed the Quiz</div>
+    <div>Total Score: {state1.score}/{quizz.length} </div>
+        
     </>
   )
 }
