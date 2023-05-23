@@ -143,12 +143,12 @@ const Signup = () => {
                                         onChange={(e)=>setusername(e.target.value)}
                                       />
 
-                                      <input
+                                      {/* <input
                                         type="text"
                                         placeholder="Email"
                                         className="form-control my-2"
                                         onChange={(e)=>setemail(e.target.value)}
-                                      />
+                                      /> */}
 
                                       <input
                                         type="text"
