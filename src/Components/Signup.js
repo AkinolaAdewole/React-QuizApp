@@ -66,36 +66,22 @@ const Signup = () => {
       }
     }
 
-    // const signin= async ()=>{
-    //   setIsLoading(true);
-    //   const res= await axios.get("https://jsonplaceholder.typicode.com/photos")
-		// 	.then(res => {
-		// 		// console.log(res);
-    //     setIsLoading(false)
-		// 	}).catch((error) => {
-		// 		console.log('error', error);
-		// 	})
+    const signin= async ()=>{
+      setIsLoading(true);
+      axios.get("https://jsonplaceholder.typicode.com/photos")
+			.then(res => {
+				// console.log(res);
+        setIsLoading(false)
+			}).catch((error) => {
+				console.log('error', error);
+			})
 
     
-    //   Navigate('/signin')
-    // }
+      Navigate('/signin')
+    }
 
-            const signin = async () => {
-              setIsLoading(true); // Set isLoading to true before making the API request
-            
-              try {
-                const res = await axios.get("https://jsonplaceholder.typicode.com/photos");
-                // Perform any processing you need with the response data
-                console.log(res.data);
-              } catch (error) {
-                console.log('Error:', error);
-              }
-            
-              setIsLoading(false); // Set isLoading to false after the API request is completed
-              Navigate('/signin'); // Navigate to the '/signin' route
-            };
 
-            
+
     
   return (
     <>
