@@ -11,7 +11,6 @@ import '../Styles/signup.css'
 const Signup = () => {
    let Navigate = useNavigate()
    
-    const[email, setemail]=useState("")
     const[username, setusername]= useState("")
     const[password, setpassword]=useState("")
     const[allUsers, setAllUsers]=useState([])
@@ -37,16 +36,15 @@ const Signup = () => {
     // console.log(b)
 
     const submit=()=>{
-      if(username!=="" && email!=="" && password!==""){
-        let player={username, email, password}
+      if(username!=="" && password!==""){
+        let player={username, password}
       
         setAllUsers(()=>{
             let gamer =[...allUsers,player]
             Navigate('/signin')
             localStorage.steph=JSON.stringify(gamer)
              return gamer
-             
-            // console.log(gamer)
+            console.log(gamer);
           })}
     }
 
@@ -81,18 +79,8 @@ const Signup = () => {
     }
   return (
     <>
-      {
-        isPending && <div>Loading</div>
-      }
             <nav className="navbar navbar-expand-lg  nav">
            
-            {/* <div>
-      {isLoading ?  (
-        "Loading..."
-      ) : (
-        "Not loading"
-      )}
-      </div> */}
               
               <Link to="/">
               <div className='icon1'>
@@ -143,12 +131,6 @@ const Signup = () => {
                                         onChange={(e)=>setusername(e.target.value)}
                                       />
 
-                                      {/* <input
-                                        type="text"
-                                        placeholder="Email"
-                                        className="form-control my-2"
-                                        onChange={(e)=>setemail(e.target.value)}
-                                      /> */}
 
                                       <input
                                         type="text"

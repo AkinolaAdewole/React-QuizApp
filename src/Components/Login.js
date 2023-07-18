@@ -30,8 +30,7 @@ const Login = () => {
     let b = userDetails.find(
       (eachUser) =>
         eachUser.username === username &&
-        eachUser.password === password &&
-        eachUser.email
+        eachUser.password === password
     );
 
     if (typeof b === "undefined") {
