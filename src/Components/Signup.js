@@ -66,19 +66,20 @@ const Signup = () => {
       }
     }
 
-    const signin= async ()=>{
-      setIsLoading(true);
-      axios.get("https://jsonplaceholder.typicode.com/photos")
-			.then(res => {
-				// console.log(res);
-        setIsLoading(false)
-			}).catch((error) => {
-				console.log('error', error);
-			})
-
     
-      Navigate('/signin')
-    }
+
+        const signin= async ()=>{
+          setIsLoading(true);
+          axios.get("https://jsonplaceholder.typicode.com/photos")
+          .then(res => {
+            // console.log(res);
+            setIsLoading(false)
+          }).catch((error) => {
+            console.log('error', error);
+          })
+
+          Navigate('/signin')
+        }
 
 
 
