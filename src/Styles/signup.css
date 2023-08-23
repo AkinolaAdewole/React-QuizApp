@@ -8,6 +8,11 @@
     margin-left: 30px;
 }
 
+.bg1{
+    height: 680px;
+    background-image: url("../Pics/question-mark-5701302_1920.jpg");
+}
+
 .bg{
     background-color: whitesmoke;
 }
@@ -20,7 +25,8 @@
     }  
 }
 .user{
-    padding-left:400px;
+    padding-left:250px;
+    display: flex;
 }
 
 
@@ -35,8 +41,8 @@ margin-left: 800px;
 
 .login{
     border-style: none;
-    background-color: white;
-    color: blue;
+    background-color: purple;
+    color: white;
     
 }
 .login1{
