@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import '../Styles/login.css'
 
 const Login = () => {
   const [username, setuserName] = useState("");
@@ -52,7 +53,7 @@ const Login = () => {
   // }
   return (
     <>
-      <nav className="navbar navbar-expand-lg  nav">
+      <nav className="navbar navbar-expand-lg ">
         <Link to="/">
           <div className="icon1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
