@@ -145,12 +145,12 @@ const Signup = () => {
                                         className="form-control my-2"
                                         onChange={(e)=>setpassword(e.target.value)} />
 
-                                      <button type="button" className="btn btn-primary" onClick={submit}>Sign up</button>
+                                      <button type="button" className=" rounded-1 " onClick={submit}>Sign up</button>
                                       
                                       
                                       <div className='user pt-3' > 
                                             <div className='color'>Already a user?</div>  
-                                            <div><button className='login' onClick={signin}>Sign in</button></div> 
+                                            <div><button className='login rounded-1' onClick={signin}>Sign in</button></div> 
                                       </div>
                                       
                                     </form>

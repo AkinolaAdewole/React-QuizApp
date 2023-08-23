@@ -17,13 +17,6 @@
     background-color: whitesmoke;
 }
 
-@media only screen and (max-width: 745px){ 
-    .user{
-        display:flex ;
-        flex-direction: column;
-        padding-left: 400px;
-    }  
-}
 .user{
     padding-left:250px;
     display: flex;
@@ -41,10 +34,25 @@ margin-left: 800px;
 
 .login{
     border-style: none;
-    background-color: purple;
-    color: white;
-    
+    background-color: silver;
+    color: black;
 }
-.login1{
+
+.signup{
+    background-color: silver;
+    color: black;
+}
+
+@media only screen and (max-width: 745px){ 
+    .user{
+        flex-direction: column;
+        padding-left: 20px;
+    }
     
+    
+    .login{
+        border-style: none;
+        background-color: silver;
+        color: black;
+    }
 }
