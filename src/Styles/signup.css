@@ -29,7 +29,7 @@
 
 
 .signin{
-margin-left: 800px;
+    margin-left: 900px;
 }
 
 .login{
@@ -43,16 +43,39 @@ margin-left: 800px;
     color: black;
 }
 
+@media only screen and (max-width: 1225px) {
+    .signin{
+        margin-left: 670px;
+    }
+
+    .user{
+        display: flex;
+        padding-left: 150px;
+    }
+}
+
+@media only screen and (max-width: 1005px) {
+    .signin{
+        margin-left: 600px;
+    }
+
+    .user{
+        display: flex;
+        padding-left: 115px;
+    }
+}
+
 @media only screen and (max-width: 745px){ 
     .user{
         flex-direction: column;
         padding-left: 20px;
     }
     
-    
     .login{
         border-style: none;
         background-color: silver;
         color: black;
     }
+
+
 }

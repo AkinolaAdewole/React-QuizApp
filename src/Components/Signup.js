@@ -128,7 +128,7 @@ const Signup = () => {
                   <div className='pt-3'>
                       <div className="container-fluid">
                           <div className="row">
-                            <div className="col-6 shadow-sm mx-auto">
+                            <div className="col-6 shadow mx-auto">
                               <h1 className="text-center color">Sign Up</h1>
                                     <form>
                                       <input
@@ -145,7 +145,7 @@ const Signup = () => {
                                         className="form-control my-2"
                                         onChange={(e)=>setpassword(e.target.value)} />
 
-                                      <button type="button" className=" rounded-1 " onClick={submit}>Sign up</button>
+                                      <button type="button" className="rounded-1 " onClick={submit}>Sign up</button>
                                       
                                       
                                       <div className='user pt-3' > 

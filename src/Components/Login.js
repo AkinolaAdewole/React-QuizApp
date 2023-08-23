@@ -85,33 +85,33 @@ const Login = () => {
       </nav>
 
       <div ref={userN}></div>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-9 shadow-sm mx-auto">
-            <h1 className="text-center">Sign In</h1>
-            <form>
-              <input
-                type="text"
-                placeholder="Username"
-                className="form-control my-2"
-                onChange={(e) => setuserName(e.target.value)}
-              />
-             
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-9 shadow-sm mx-auto">
+                <h1 className="text-center">Sign In</h1>
+                <form>
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    className="form-control my-2"
+                    onChange={(e) => setuserName(e.target.value)}
+                  />
+                
 
-              <input
-                type="password"
-                placeholder="Password"
-                className="form-control my-2"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              
-              <button className="btn btn-primary" onClick={signin}>
-                sign in
-              </button>
-            </form>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className="form-control my-2"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  
+                  <button className="btn btn-primary" onClick={signin}>
+                    sign in
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
     </>
   );
 };
