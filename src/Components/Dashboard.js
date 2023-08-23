@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import image1 from '../Pics/image1.png'
+import AdobeStock from '../Pics/AdobeStock.jpeg'
 import "../Styles/dashboard.css"
 import { useNavigate, Link } from 'react-router-dom'
 
@@ -82,15 +82,16 @@ const Dashboard = () => {
           
           
           
-          <div className='wwbm'><img src={image1} alt="" /></div>
+          <div className=''><img src={AdobeStock} className='wwbm' /></div>
 
                
               <div className='row'>
 
-              <div type="button" className="btn btn-primary" onClick={takeQuiz} >Take Quiz</div>
-                <div type="button" className="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                  Set Questions
-                </div>
+                  <div type="button" className="btn btn-primary" onClick={takeQuiz} >Take Quiz</div>
+                  
+                  <div type="button" className="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Set Questions
+                  </div>
 
                
                 <div type="button" className="btn btn-primary mt-2">Result</div>

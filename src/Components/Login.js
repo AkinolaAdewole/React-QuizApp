@@ -86,10 +86,11 @@ const Login = () => {
       </nav>
 
           <div className="bg">
-                  <div className="container-fluid mt-5">
+                  <div className="container-fluid pt-4">
                     <div className="row">
-                      <div className="col-9 shadow-sm mx-auto">
-                        <h1 className="text-center">Sign In</h1>
+                      <div className="col-6 shadow-sm mx-auto">
+
+                        <h1 className="text-center text-white">Sign In</h1>
                                     <div ref={userN}></div>
                         <form>
                           <input

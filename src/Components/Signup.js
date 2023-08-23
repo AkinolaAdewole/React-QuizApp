@@ -118,6 +118,7 @@ const Signup = () => {
                </div>
                
             </nav>
+            
 
             
         <div className='bg1'>

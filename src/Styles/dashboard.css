@@ -2,7 +2,13 @@
     background-color: purple;
 }
 .wwbm{
-    /* background-image: url("https://unsplash.com/photos/eBRTYyjwpRY"); */
     height: 400px;
     width: 100%;
+}
+
+@media only screen and (max-width: 1170px) {
+    .wwbm{
+        height: 450px;
+        width: 100%;
+    }
 }

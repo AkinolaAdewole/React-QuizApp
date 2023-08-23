@@ -9,5 +9,13 @@
 }
 
 .bg{
-    background-image: url("../Pics/AdobeStock.jpeg");
+    background-image: url("../Pics/question-mark-5701302_1920.jpg");
+}
+
+@media only screen and (max-width: 1172px) {
+    .signup{
+        margin-left: 800px;
+        border-style: none;
+        color: black;
+    } 
 }
