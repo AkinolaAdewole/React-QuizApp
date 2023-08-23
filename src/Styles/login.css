@@ -2,4 +2,12 @@
     background-color: purple;
 }
 
-.signup{}
+.signup{
+    margin-left: 1000px;
+    border-style: none;
+    color: black;
+}
+
+.bg{
+    background-image: url("../Pics/AdobeStock.jpeg");
+}

@@ -53,7 +53,7 @@ const Login = () => {
   // }
   return (
     <>
-      <nav className="navbar navbar-expand-lg ">
+      <nav className="navbar navbar-expand-lg nav">
         <Link to="/">
           <div className="icon1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
@@ -78,40 +78,42 @@ const Login = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link to="/">
-                <h3 className="btn btn-primary">Sign Up</h3>
+                <h3 className="signup btn text-white">Sign Up</h3>
               </Link>
             </li>
           </ul>
         </div>
       </nav>
 
-      <div ref={userN}></div>
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-9 shadow-sm mx-auto">
-                <h1 className="text-center">Sign In</h1>
-                <form>
-                  <input
-                    type="text"
-                    placeholder="Username"
-                    className="form-control my-2"
-                    onChange={(e) => setuserName(e.target.value)}
-                  />
-                
+          <div className="bg">
+                  <div className="container-fluid mt-5">
+                    <div className="row">
+                      <div className="col-9 shadow-sm mx-auto">
+                        <h1 className="text-center">Sign In</h1>
+                                    <div ref={userN}></div>
+                        <form>
+                          <input
+                            type="text"
+                            placeholder="Username"
+                            className="form-control my-2"
+                            onChange={(e) => setuserName(e.target.value)}
+                          />
+                        
 
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    className="form-control my-2"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  
-                  <button className="btn btn-primary" onClick={signin}>
-                    sign in
-                  </button>
-                </form>
-              </div>
-            </div>
+                          <input
+                            type="password"
+                            placeholder="Password"
+                            className="form-control my-2"
+                            onChange={(e) => setPassword(e.target.value)}
+                          />
+                          
+                          <button className="btn btn-primary" onClick={signin}>
+                            sign in
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
           </div>
     </>
   );
