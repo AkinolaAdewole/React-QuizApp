@@ -6,7 +6,44 @@
     width: 100%;
 }
 
+.flexx{
+    display: flex;
+    flex-direction: column;
+}
+
+.signout{
+    margin-left: 1000px;
+    color: white;
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 1170px) {
+    .wwbm{
+        height: 450px;
+        width: 100%;
+    }
+
+    .flexx{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .signout{
+        margin-left: 900px;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 1103px) {
+    .signout{
+        margin-left: 780px;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
     .wwbm{
         height: 450px;
         width: 100%;

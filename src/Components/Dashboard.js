@@ -65,15 +65,15 @@ const Dashboard = () => {
                
                 <div  className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
+                        <li className="nav-item nav-link">
+
                           <Link to="/signin">
-                           <h3 className="btn btn-primary" onClick={signout} >Sign Out</h3> 
+                           <h3 className="signout btn" onClick={signout} >Sign Out</h3> 
                           </Link>
                         </li>
                     </ul>
                 </div>
 
-                {/* <button onClick={signout}>Sign Out</button> */}
             </nav>
 
             
@@ -85,10 +85,10 @@ const Dashboard = () => {
           <div className=''><img src={AdobeStock} className='wwbm' /></div>
 
                
-              <div className='row'>
+              <div className='container-fluid flexx mt-1'>
 
                   <div type="button" className="btn btn-primary" onClick={takeQuiz} >Take Quiz</div>
-                  
+
                   <div type="button" className="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Set Questions
                   </div>

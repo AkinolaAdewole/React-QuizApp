@@ -9,10 +9,7 @@ import "../Styles/btn.css";
 
 
 const Quizcomp = () => {
-  
 
-  // console.log(quizz.choices)
-  // const [currentScore, setCurrentScore] = useState(0);
  const Navigate=useNavigate()
  const dispatch=useDispatch()
   const [sampleQuiz, setSampleQuiz] = useState(0);
@@ -111,51 +108,49 @@ console.log(sampleQuiz);
 
 
                 <div className="bg">
-                    <div><h1 className="text-light"> Game Who Wants to Be a Millionaire? - Free online version</h1></div>
-                
-                {/* {console.log('*: ',quizz)} */}
+                    <div>
+                       <h1 className="text-light"> Game Who Wants to Be a Millionaire? - Free online version</h1>
+                    </div>
 
-
-
-                 
                  
                     <div className="quiz1"  onLoad={(e)=>hp(e)}>
 
-                    <div>
-                  {
-                    <>
-                    <div className="pt-4"><h5>{quizz[sampleQuiz].question}</h5></div>
-                              <div>{quizz[sampleQuiz].choices.map((options, index)=>
-                                  <div key={index} className="pt-3 ps-3 d-flex">
-                                          <input
-                                            type="radio"
-                                            name="quizOption"
-                                            checked={selectedOption === options}
-                                            onChange={() => buttonClick(options, quizz[sampleQuiz].answer)}
-                                          />
-                                  {options.choice}
-                                </div>
-                            
-                              // <div key={index} className="pt-3 d-flex"><button className="button1" onClick={()=>buttonClick(options, quizz[sampleQuiz].answer)}>{options.choice}</button></div>
-                              )}
-                               {/* <p>Selected Option: {selectedOption}</p> */}
-                              
-                              </div>
-                      
-                      <div className="pt-5 d-flex">
-                      <div><button className="button2" onClick={previousQuestion}>Previous</button> </div>
-                                {sampleQuiz === quizz.length-1?
-                                <Link to="/result">
-                                    <button onClick={finish} className={style}>Finish Test </button>
-                                </Link>:
-                                <button className={style} onClick={nextQuestion}>Next </button>}
-                               
-                             
-                              </div>
-                      
-                    </>
-                  }
-                 </div>
+                          <div>
+                              {
+                                <>
+                                <div className="pt-4"><h5>{quizz[sampleQuiz].question}</h5></div>
+                                          <div>{quizz[sampleQuiz].choices.map((options, index)=>
+
+                                              <div key={index} className="pt-3 ps-3 d-flex">
+                                                      <input
+                                                        type="radio"
+                                                        name="quizOption"
+                                                        checked={selectedOption === options}
+                                                        onChange={() => buttonClick(options, quizz[sampleQuiz].answer)}
+                                                      />
+                                              <div className="text-white"> {options.choice}</div>
+                                            </div>
+                                        
+                                          )}
+                                          
+                                          </div>
+                                  
+                                  <div className="pt-5 d-flex">
+                                       <div>
+                                        y<button className="button2" onClick={previousQuestion}>Previous</button> 
+                                       </div>
+                                            {sampleQuiz === quizz.length-1?
+                                            <Link to="/result">
+                                                <button onClick={finish} className={style}>Finish Test </button>
+                                            </Link>:
+                                            <button className={style} onClick={nextQuestion}>Next </button>}
+                                          
+                                        
+                                          </div>
+                                  
+                                </>
+                              }
+                      </div>
                               
                     
                       

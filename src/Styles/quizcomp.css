@@ -8,11 +8,11 @@
 }
 
 .quiz1{
+    background-image: url("../Pics/AdobeStock.jpeg");
     margin-top: 10px;
     margin-left: 110px;
     width: 1150px;
     height: 470px;
-    background-color: aqua;
 }
 
 .button1{
