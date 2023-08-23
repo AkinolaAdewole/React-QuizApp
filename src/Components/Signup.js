@@ -120,7 +120,7 @@ const Signup = () => {
             </nav>
 
             
-        <div className='bg'>
+        <div className=''>
                   <div className='pt-3'> 
                     <h1 className='color'>Game Who Wants to Be a Millionaire? - Free online version</h1>
                   </div>
