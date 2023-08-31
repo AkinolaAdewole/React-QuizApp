@@ -26,28 +26,26 @@ const Quizcomp = () => {
     const nextQuiz=sampleQuiz+1
     if(nextQuiz<quizz.length){
       setSampleQuiz(nextQuiz)
-
     } else{
-      // setSampleQuiz(quizz.length)
-      // alert('end of quiz')
       setstyle('btn2')
       settitle(finishTest)
     alert('end of quiz');
     } 
-    
   }
-console.log(quizz.length);
-console.log(sampleQuiz);
+
+  const previousQuestion=()=>{
+    const previousQuiz=sampleQuiz-1
+    setSampleQuiz(previousQuiz)
+  }
+  
+// console.log(quizz.length);
+// console.log(sampleQuiz);
 
   const buttonClick=(options, answer)=>{
     setSelectedOption(options);
      if(options.choice === answer ){
       setCorrect(correct+1)
       dispatch(correctFunct(1))
-
-      
-    //  alert('The Answer Is Correct')
-     
      }else{
       setWrong(wrong + 1)
       dispatch(wrongFunct(1))
@@ -63,12 +61,6 @@ console.log(sampleQuiz);
     // } else{
     //   alert('end of quiz')
     // }
-  }
- // console.log('Score: ', score)
-  const previousQuestion=()=>{
-
-    const previousQuiz=sampleQuiz-1
-    setSampleQuiz(previousQuiz)
   }
 
   const finish=()=>{
@@ -143,9 +135,9 @@ console.log(sampleQuiz);
                                        </div>
                                             {sampleQuiz === quizz.length-1?
                                             <Link to="/result">
-                                                <button onClick={finish} className={style}>Finish Test </button>
+                                                <button onClick={finish} className='button2'>Finish Test </button>
                                             </Link>:
-                                            <button className={style} onClick={nextQuestion}>Next </button>}
+                                            <button className='button2' onClick={nextQuestion}>Next </button>}
                                           
                                         
                                           </div>

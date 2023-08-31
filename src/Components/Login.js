@@ -26,8 +26,8 @@ const Login = () => {
 
   const userDetails = JSON.parse(localStorage.steph);
 
-  const signin = () => {
-    e.prevent.Default()
+  const signin = (e) => {
+    // e.prevent.Default()
     let b = userDetails.find(
       (eachUser) =>
         eachUser.username === username &&
