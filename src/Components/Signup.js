@@ -32,9 +32,6 @@ const Signup = () => {
       
     },[])
 
-   
-    // console.log(b)
-
     const submit=()=>{
       if(username!=="" && password!==""){
         let player={username, password}
@@ -44,7 +41,7 @@ const Signup = () => {
             Navigate('/signin')
             localStorage.steph=JSON.stringify(gamer)
              return gamer
-            console.log(gamer);
+            // console.log(gamer);
           })}
     }
 
@@ -54,7 +51,6 @@ const Signup = () => {
       //     return (<div>Loading</div>)
       //   }, 5000);
       // }
-
       setIsLoading(true)
       if(isLoading==="false"){
         alert('false')

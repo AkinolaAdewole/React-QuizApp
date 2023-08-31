@@ -97,9 +97,9 @@ console.log(sampleQuiz);
                
                 <div  className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
+                        <li className="nav-item nav-link">
                           <Link to="/signin">
-                           <h3 className="btn btn-primary" >Sign Out</h3> 
+                           <h3 className="btn signout" >Sign Out</h3> 
                           </Link>
                         </li>
                     </ul>
@@ -113,15 +113,17 @@ console.log(sampleQuiz);
                     </div>
 
                  
-                    <div className="quiz1"  onLoad={(e)=>hp(e)}>
+                    <div className="quiz1 container"  onLoad={(e)=>hp(e)}>
 
                           <div>
                               {
                                 <>
-                                <div className="pt-4"><h5>{quizz[sampleQuiz].question}</h5></div>
+                                <div className="pt-4"><h5 className="text-white">{quizz[sampleQuiz].question}</h5></div>
+
                                           <div>{quizz[sampleQuiz].choices.map((options, index)=>
 
                                               <div key={index} className="pt-3 ps-3 d-flex">
+
                                                       <input
                                                         type="radio"
                                                         name="quizOption"

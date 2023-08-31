@@ -8,7 +8,7 @@
 }
 
 .quiz1{
-    background-image: url("../Pics/AdobeStock.jpeg");
+    background-image: url("../Pics/q1.png");
     margin-top: 10px;
     margin-left: 110px;
     width: 1150px;
@@ -24,4 +24,72 @@
     width: 120px;
     border-style: none;
     border-radius: 10px;
+}
+
+.signout{
+    margin-left: 1000px;
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (max-width:1170px) {
+    .quiz1{
+        background-image: url("../Pics/q1.png");
+        margin-top: 10px;
+        margin-left: 110px;
+        width: 1000px;
+        height: 470px;
+    }
+}
+
+@media only screen and (max-width:1140px) {
+    .quiz1{
+        background-image: url("../Pics/q1.png");
+        margin-top: 10px;
+        margin-left: 110px;
+        width: 800px;
+        height: 470px;
+    }
+}
+
+@media only screen and (max-width:980px) {
+    .quiz1{
+        background-image: url("../Pics/q1.png");
+        margin-top: 10px;
+        margin-left: 110px;
+        width: 1000px;
+        height: 430px;
+    }
+}
+
+@media only screen and (max-width:980px) {
+    .signout{
+        margin-left: 5px;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width:980px) {
+    .signout{
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+
+@media only screen and (max-width:480px) {
+    .quiz1{
+        background-image: url("../Pics/q1.png");
+        margin-top: 10px;
+        margin-left: 110px;
+        width: 1000px;
+        height: 400px;
+    }
+
+    .signout{
+        color: white;
+        text-decoration: none;
+    }
 }

@@ -27,7 +27,7 @@ const Login = () => {
   const userDetails = JSON.parse(localStorage.steph);
 
   const signin = () => {
-    // e.prevent.Default()
+    e.prevent.Default()
     let b = userDetails.find(
       (eachUser) =>
         eachUser.username === username &&
@@ -36,12 +36,7 @@ const Login = () => {
 
     if (typeof b === "undefined") {
       userN.current.innerHTML="username is not correct"
-      // alert("user data is incorrect");
-    }
-    // else if(typeof b ==='undefined'){
-    //
-    // }
-    else {
+    }else {
       Navigate("/dashboard");
       localStorage.steve = JSON.stringify(b);
       return b;
