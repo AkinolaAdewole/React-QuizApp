@@ -4,7 +4,6 @@ import quizz from '../quizz'
 
 const Result = () => {
   const userDetails=JSON.parse(localStorage.steve)
-    // console.log(userDetails)
 
  let username=userDetails.username
  let email= userDetails.email
@@ -16,7 +15,7 @@ const Result = () => {
   return (
     <>
 
-    <div>Congratulations! {username}</div>
+    <div>{username}</div>
     <div>You have completed the Quiz</div>
     <div>Total Score: {state1.score}/{quizz.length} </div>
         

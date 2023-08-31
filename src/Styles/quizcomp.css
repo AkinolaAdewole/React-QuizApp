@@ -17,13 +17,20 @@
 
 .button1{
     width: 120px;
-    background-color: aqua;
     border-style: none;
+    border-radius: 10px;
+    margin-left: 50px;
 }
+
 .button2{
     width: 120px;
     border-style: none;
     border-radius: 10px;
+    margin-left: 300px;
+}
+
+.btnmargin{
+    margin-left: 50px;
 }
 
 .signout{

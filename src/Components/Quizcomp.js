@@ -33,11 +33,15 @@ const Quizcomp = () => {
     } 
   }
 
-  const previousQuestion=()=>{
-    const previousQuiz=sampleQuiz-1
-    setSampleQuiz(previousQuiz)
-  }
-  
+  const previousQuestion = () => {
+    const previousQuiz = sampleQuiz - 1;
+    
+    if (previousQuiz >= 0) {
+        setSampleQuiz(previousQuiz);
+    } else {
+        alert('You are already on the first question');
+    }
+}
 // console.log(quizz.length);
 // console.log(sampleQuiz);
 
@@ -114,33 +118,29 @@ const Quizcomp = () => {
 
                                           <div>{quizz[sampleQuiz].choices.map((options, index)=>
 
-                                              <div key={index} className="pt-3 ps-3 d-flex">
-
-                                                      <input
-                                                        type="radio"
-                                                        name="quizOption"
-                                                        checked={selectedOption === options}
-                                                        onChange={() => buttonClick(options, quizz[sampleQuiz].answer)}
-                                                      />
-                                              <div className="text-white"> {options.choice}</div>
-                                            </div>
+                                                <div key={index} className="pt-3 ps-3 d-flex">
+                                                        <input
+                                                          type="radio"
+                                                          name="quizOption"
+                                                          checked={selectedOption === options}
+                                                          onChange={() => buttonClick(options, quizz[sampleQuiz].answer)}
+                                                        />
+                                                <div className="text-white"> {options.choice}</div>
+                                              </div>
                                         
-                                          )}
-                                          
+                                            )}
                                           </div>
                                   
                                   <div className="pt-5 d-flex">
                                        <div>
-                                        y<button className="button2" onClick={previousQuestion}>Previous</button> 
+                                        <button className="button2" onClick={previousQuestion}>Previous</button> 
                                        </div>
                                             {sampleQuiz === quizz.length-1?
                                             <Link to="/result">
-                                                <button onClick={finish} className='button2'>Finish Test </button>
+                                                <button onClick={finish} className='button1'>Finish Test </button>
                                             </Link>:
-                                            <button className='button2' onClick={nextQuestion}>Next </button>}
-                                          
-                                        
-                                          </div>
+                                            <button className='button1' onClick={nextQuestion}>Next </button>}      
+                                  </div>
                                   
                                 </>
                               }
