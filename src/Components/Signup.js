@@ -137,7 +137,7 @@ const Signup = () => {
 
 
                                       <input
-                                        type="text"
+                                        type="password"
                                         placeholder="Password"
                                         className="form-control my-2"
                                         onChange={(e)=>setpassword(e.target.value)} />
